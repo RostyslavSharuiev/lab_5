@@ -58,25 +58,25 @@ uv run python main.py -i song.mp3 -o separated_tracks -p stem_ -f flac -d cpu --
 ## 🛠️ CLI Arguments Reference
 
 ### Audio Settings
-| Flag | Long Flag | Default | Description |
-|---|---|---|---|
-| `-i` | `--input` | `audio.mp3` | Path to input audio file to separate |
-| `-o` | `--output-dir` | `output` | Target directory path for saved stems |
-| `-p` | `--prefix` | `output_` | Prefix prepended to stem filenames |
-| `-f` | `--format` | `wav` | Audio container format extension (`wav`, `flac`) |
+| Flag | Long Flag      | Default     | Description                                      |
+|------|----------------|-------------|--------------------------------------------------|
+| `-i` | `--input`      | `audio.mp3` | Path to input audio file to separate             |
+| `-o` | `--output-dir` | `output`    | Target directory path for saved stems            |
+| `-p` | `--prefix`     | `output_`   | Prefix prepended to stem filenames               |
+| `-f` | `--format`     | `wav`       | Audio container format extension (`wav`, `flac`) |
 
 ### Model Settings
-| Flag | Long Flag | Default | Description |
-|---|---|---|---|
-| `-m` | `--model` | `htdemucs` | Pretrained Demucs model name (`htdemucs`, `htdemucs_ft`, etc.) |
-| `-d` | `--device` | `auto` | Execution device (`auto`, `cpu`, `cuda`) |
+| Flag | Long Flag  | Default    | Description                                                    |
+|------|------------|------------|----------------------------------------------------------------|
+| `-m` | `--model`  | `htdemucs` | Pretrained Demucs model name (`htdemucs`, `htdemucs_ft`, etc.) |
+| `-d` | `--device` | `auto`     | Execution device (`auto`, `cpu`, `cuda`)                       |
 
 ### Separation Settings
-| Flag | Long Flag | Default | Description |
-|---|---|---|---|
-| | `--overlap` | `0.25` | Overlap fraction between consecutive audio chunks (0.0 to 1.0) |
-| | `--shifts` | `1` | Number of random shifts for equivariant stabilization (>= 1) |
-| | `--no-split` | `False` | Disable chunked splitting (requires large GPU memory) |
+| Flag | Long Flag    | Default | Description                                                    |
+|------|--------------|---------|----------------------------------------------------------------|
+|      | `--overlap`  | `0.25`  | Overlap fraction between consecutive audio chunks (0.0 to 1.0) |
+|      | `--shifts`   | `1`     | Number of random shifts for equivariant stabilization (>= 1)   |
+|      | `--no-split` | `False` | Disable chunked splitting (requires large GPU memory)          |
 
 ---
 
@@ -120,9 +120,9 @@ lab_5/
 
 ## 🚦 Exit Codes
 
-| Code | Name | Description |
-|---|---|---|
-| `0` | `SUCCESS` | Track separation finished successfully |
-| `1` | `FAILURE` | Model loading, inference, or audio I/O error |
-| `2` | `INVALID_CONFIG` | Invalid CLI arguments or configuration parameter |
-| `130` | `INTERRUPTED` | Process aborted by user (`Ctrl+C`) |
+| Code  | Name             | Description                                      |
+|-------|------------------|--------------------------------------------------|
+| `0`   | `SUCCESS`        | Track separation finished successfully           |
+| `1`   | `FAILURE`        | Model loading, inference, or audio I/O error     |
+| `2`   | `INVALID_CONFIG` | Invalid CLI arguments or configuration parameter |
+| `130` | `INTERRUPTED`    | Process aborted by user (`Ctrl+C`)               |
