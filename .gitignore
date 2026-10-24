@@ -13,7 +13,6 @@ venv/
 
 # Audio outputs & Recordings
 separated_tracks/
-output/
 *.mp3
 *.wav
 
